@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>YouTube AI Studio</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header class="topbar">
+      <div>
+        <h1>YouTube AI Studio</h1>
+        <p>Plan, produce, and optimize your channel content with AI-powered workflows.</p>
+      </div>
+      <button id="theme-toggle" aria-label="Toggle theme">🌙</button>
+    </header>
+
+    <main class="grid">
+      <section class="panel config-panel">
+        <h2>AI Configuration</h2>
+        <label>
+          Provider
+          <select id="provider">
+            <option value="openai">OpenAI-compatible</option>
+          </select>
+        </label>
+        <label>
+          API Base URL
+          <input id="api-base" type="text" value="https://api.openai.com/v1" />
+        </label>
+        <label>
+          API Key
+          <input id="api-key" type="password" placeholder="sk-..." />
+        </label>
+        <label>
+          Model
+          <input id="model" type="text" value="gpt-4.1-mini" />
+        </label>
+        <p class="helper">Saved in your browser (localStorage). Never share your key publicly.</p>
+        <button id="save-config">Save Configuration</button>
+      </section>
+
+      <section class="panel">
+        <h2>Channel Context</h2>
+        <label>
+          Channel Name
+          <input id="channel-name" type="text" placeholder="My YouTube Channel" />
+        </label>
+        <label>
+          Niche
+          <input id="niche" type="text" placeholder="Tech tutorials / Vlogs / Gaming" />
+        </label>
+        <label>
+          Target Audience
+          <input id="audience" type="text" placeholder="Beginners, 16-30, English speaking" />
+        </label>
+        <label>
+          Video Topic
+          <input id="video-topic" type="text" placeholder="AI tools to grow on YouTube in 2026" />
+        </label>
+      </section>
+
+      <section class="panel tools-panel">
+        <h2>AI Creator Tools</h2>
+        <div class="tool-buttons">
+          <button data-tool="ideas">Generate 10 Viral Video Ideas</button>
+          <button data-tool="titles">Create High-CTR Title Options</button>
+          <button data-tool="script">Write a Full Video Script</button>
+          <button data-tool="thumbnail">Thumbnail Prompt + Concepts</button>
+          <button data-tool="chapters">Auto Chapters + Hook Plan</button>
+          <button data-tool="engagement">Audience Engagement Strategy</button>
+        </div>
+      </section>
+
+      <section class="panel output-panel">
+        <div class="output-heading">
+          <h2>AI Output</h2>
+          <button id="copy-output">Copy</button>
+        </div>
+        <pre id="output">Pick a tool to generate AI output...</pre>
+      </section>
+    </main>
+
+    <template id="loading-template">
+      <span class="spinner"></span>
+      Thinking...
+    </template>
+
+    <script src="app.js"></script>
+  </body>
+</html>
